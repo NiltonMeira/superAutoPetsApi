@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const FoodSchema = new mongoose.Schema({
+export const FoodSchema = new mongoose.Schema({
     Name: String,
     effect: String,
     turn: Number,
