@@ -19,7 +19,7 @@ export const authService = async (payload: TLogin) => {
     }
 
     return sign(
-        {email: user.email},
+        {email: user.email, role: user.Role},
         "muryloLindo",
         {subject: user.id, expiresIn: 300000}
     )

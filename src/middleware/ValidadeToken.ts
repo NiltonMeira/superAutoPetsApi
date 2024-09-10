@@ -13,15 +13,17 @@ export const validateToken = async(req: Request, res: Response, next: NextFuncti
         if(error){
             throw new AppError(error.message, 401)
         }
-        res.locals.userId = decoded.subject //send this value in the middleware
+        res.locals.userId = decoded.sub //send this value in the middleware
         res.locals.email = decoded.email
+        res.locals.role = decoded.role
     })
 
     next()
 }
 
 export const validateOwnUser = async (req:Request, res: Response, next: NextFunction) => {
-    if(res.locals.userId != req.params.userId)
+
+    if(res.locals.userId != req.params.userId && Number(res.locals.role) != 1)
         throw new AppError("You don't have permission for that", 403)
     next()
 }

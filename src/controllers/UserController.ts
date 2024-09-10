@@ -8,16 +8,16 @@ export const creationUserController = async (req: Request, res: Response) => {
 }
 
 export const getUserController = async (req: Request, res: Response) => {
-    const service = await getUserService(req.params.id)
+    const service = await getUserService(req.params.userId)
     res.status(200).json({...service?.toJSON(), password: undefined})
 }
 
 export const deleteUserController = async (req: Request, res: Response) => {
-    await deleteUserService(req.params.id)
+    await deleteUserService(req.params.userId)
     res.status(204).send()
 }
 
 export const patchUserController = async (req: Request, res: Response) => {
-    const service = await patchUserService(req.body, req.params.id)
+    const service = await patchUserService(req.body, req.params.userId)
     res.status(200).json(service)
 }

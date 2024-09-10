@@ -8,4 +8,4 @@ export const FoodSchema = new mongoose.Schema({
     
 })
 
-export const Foods = mongoose.model('Foods', FoodSchema)
+export const Food = mongoose.model('Foods', FoodSchema)

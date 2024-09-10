@@ -7,3 +7,5 @@ export type TUser = {
 
 export type TUserCreation = Omit<TUser, "id">
 export type TUserUpdate = Partial<TUserCreation>
+
+export type Role = "ADM" | "User" | null

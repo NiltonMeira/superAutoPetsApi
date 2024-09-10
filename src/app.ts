@@ -3,7 +3,7 @@ import  express  from "express";
 import cors from "cors"
 import userRouter from "./routes/User.routes";
 import authRouter from "./routes/Auth.routes";
-import { handleError } from "./middleware/handleError";
+import { handleError } from "./middleware/HandleError";
 
 const app = express()
 
