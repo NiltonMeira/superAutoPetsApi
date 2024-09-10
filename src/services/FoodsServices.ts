@@ -43,7 +43,9 @@ export const patchFoodService = async (payload: TFoodsUpdate, id: string) => {
     food.set(payload)
     return await food.save()
 
+}
 
-
+export const findByNameContaining = async(name: String) => {
+    const food = await Food.find()
 }
 
