@@ -1,4 +1,4 @@
-import { getAllFoodsService, getFoodByIdService } from './../services/FoodsServices';
+import { deleteFoodService, getAllFoodsService, getFoodByIdService, patchFoodService } from './../services/FoodsServices';
 import { Request, Response } from "express";
 import { creationFoodsService, getFoodsByNameContaining } from "../services/FoodsServices";
 
@@ -19,6 +19,16 @@ export const getAllFoodsController = async (req: Request, res: Response) => {
 
 export const getFoodsByNameController  = async (req: Request, res: Response ) => {
     const service = await getFoodsByNameContaining(req.query.foodName as string)
+    res.status(200).json(service)
+}
+
+export const deleteFoodController = async (req: Request, res: Response) => {
+    const service = await  deleteFoodService(req.query.foodId as string)
+    res.status(204).send()
+}
+
+export const patchFoodController = async(req: Request, res: Response) => {
+    const service = await patchFoodService(req.body, req.query.foodId as string)
     res.status(200).json(service)
 }
 
