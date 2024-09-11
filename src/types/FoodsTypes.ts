@@ -1,9 +1,11 @@
+import { StringExpressionOperatorReturningBoolean } from "mongoose"
+
 export type TFoods = {
     Id: string,
-    Name: string,
+    name: string,
     effect: String,
     turn: number,
-    img: string
+    img: StringExpressionOperatorReturningBoolean
     
 }
 

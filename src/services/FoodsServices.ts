@@ -24,6 +24,21 @@ export const getAllFoodsService = async () => {
     }
 }
 
+export const getFoodsByNameContaining = async (name: string): Promise<any> => {
+    console.log(name);
+    
+    try {
+        const food = await Food.find(
+            { "name": { "$regex": name, "$options": "i" } }
+        );
+        console.log(food);
+        return food;
+    } catch (error) {
+        console.error('Error fetching food:', error);
+        throw error;
+    }
+};
+
 export const deleteFoodService  = async (id: string) => {
     const food = await Food.findById(id)
 
@@ -45,11 +60,5 @@ export const patchFoodService = async (payload: TFoodsUpdate, id: string) => {
 
 }
 
-export const findByNameContaining = async(name: String) => {
-    const food = await Food.find(
-        {"name": {"$regex": name, "$options": "i"}},
-    )
-    console.log(food);
-    return food
-}
+
 
