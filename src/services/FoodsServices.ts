@@ -57,7 +57,6 @@ export const patchFoodService = async (payload: TFoodsUpdate, id: string) => {
 
     food.set(payload)
     return await food.save()
-
 }
 
 
