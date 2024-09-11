@@ -7,7 +7,7 @@ export const creationFoodsService = async (payload: TFoodsCreation) => {
     return await NewFood.save()
 }
 
-export const getFoodByIdService =  async (id: string) => {
+export const getFoodService =  async (id: string) => {
     const food = await Food.findById(id)
 
     if(!food) throw new AppError("Food not found", 404)
@@ -46,6 +46,10 @@ export const patchFoodService = async (payload: TFoodsUpdate, id: string) => {
 }
 
 export const findByNameContaining = async(name: String) => {
-    const food = await Food.find()
+    const food = await Food.find(
+        {"name": {"$regex": name, "$options": "i"}},
+    )
+    console.log(food);
+    return food
 }
 

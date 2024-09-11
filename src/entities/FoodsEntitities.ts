@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 export const FoodSchema = new mongoose.Schema({
-    Name: String,
+    name: String,
     effect: String,
     turn: Number,
     img: String
