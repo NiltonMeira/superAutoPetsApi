@@ -13,7 +13,12 @@ export const getFoodByIdController = async (req: Request, res: Response) => {
 }
 
 export const getAllFoodsController = async (req: Request, res: Response) => {
-    const service = await getAllFoodsService()
+    const query = req.query.foodName;
+    
+    const service = query ? 
+        await getFoodsByNameContaining(String(query)) : 
+        await getAllFoodsService()
+    
     res.status(200).json(service)
 }
 
