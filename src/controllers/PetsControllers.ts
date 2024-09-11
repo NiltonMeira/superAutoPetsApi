@@ -26,7 +26,7 @@ export const deltePetController = async (req: Request, res: Response) => {
     res.status(204).send()
 }
 
-export const pathPetController = async (req: Request, res: Response) => {
+export const patchPetController = async (req: Request, res: Response) => {
     const service = await patchPetService(req.body, req.query.petId as string)
     res.status(200).json(service)
 }
