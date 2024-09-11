@@ -24,7 +24,7 @@ export const getAllPetsService = async () => {
     }
 }
 
-export const getPetsByNameContaining = async (name: string) => {
+export const getPetsByNameContainingService = async (name: string) => {
     try {
         const pet = await Pets.find(
             { "name": { "$regex": name, "$options": "i" } }
