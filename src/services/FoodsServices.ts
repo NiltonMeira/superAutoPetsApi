@@ -7,7 +7,7 @@ export const creationFoodsService = async (payload: TFoodsCreation) => {
     return await NewFood.save()
 }
 
-export const getFoodService =  async (id: string) => {
+export const getFoodByIdService =  async (id: string) => {
     const food = await Food.findById(id)
 
     if(!food) throw new AppError("Food not found", 404)
