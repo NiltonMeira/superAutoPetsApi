@@ -24,7 +24,7 @@ export const getAllFoodsService = async () => {
     }
 }
 
-export const getFoodsByNameContaining = async (name: string): Promise<any> => {
+export const getFoodsByNameContaining = async (name: string) => {
     console.log(name);
     
     try {
@@ -45,9 +45,7 @@ export const deleteFoodService  = async (id: string) => {
     if(!food) throw new AppError("Food not found", 404)
 
     await food.deleteOne()
-
-    return "Food Deleted"
-
+    
 }
 
 export const patchFoodService = async (payload: TFoodsUpdate, id: string) => {

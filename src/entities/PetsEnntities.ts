@@ -1,17 +1,17 @@
 import mongoose from "mongoose";
-import { Foods } from "./FoodsEntitities";
+import { Food } from "./FoodsEntitities";
 
 const PetsSchema = new mongoose.Schema({
-    Name: String,
-    Ability: String,
+    name: String,
+    ability: String,
     isGoodWith: [String],
-    Counters: [String],
-    Atack: Number,
+    counters: [String],
+    atack: Number,
     heath: Number,
-    Turn: Number,
+    turn: Number,
     const: Number,
-    RecommendedFoods: [Foods],
-    Img: String
+    recommendedFoods: [Food],
+    img: String
     
 })
 

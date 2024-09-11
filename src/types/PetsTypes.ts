@@ -2,7 +2,7 @@ import { TFoods } from "./FoodsTypes"
 
 export type TPets = {
     Id: string,
-    Name: string,
+    name: string,
     Ability: string,
     isGoodWith: string[],
     Counters: [string],
