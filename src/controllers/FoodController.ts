@@ -8,7 +8,7 @@ export const creationFoodsController = async (req: Request, res: Response) => {
 }
 
 export const getFoodByIdController = async (req: Request, res: Response) => {
-    const service = await getFoodByIdService(req.query.foodId as string)
+    const service = await getFoodByIdService(req.params.id as string)
     res.status(200).json(service)
 }
 
@@ -19,11 +19,6 @@ export const getAllFoodsController = async (req: Request, res: Response) => {
         await getFoodsByNameContaining(String(query)) : 
         await getAllFoodsService()
     
-    res.status(200).json(service)
-}
-
-export const getFoodsByNameController  = async (req: Request, res: Response ) => {
-    const service = await getFoodsByNameContaining(req.query.foodName as string)
     res.status(200).json(service)
 }
 

@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { creationPetService, deletePetService, getAllPetsService, getPetByIdService, getPetsByNameContainingService, patchPetService } from "../services/PetsServices";
+import { creationPetService, deletePetService, getAllPetsService, getPetByIdService, getPetsByNameContainingService, patchPetService } from "../services/petsServices";
 
 export const creationPetController = async (req:Request, res: Response) => {
     const service = await creationPetService(req.body)
@@ -12,7 +12,12 @@ export const getPetByIdController = async (req: Request, res: Response) => {
 }
 
 export const getAllPetsController = async (req: Request, res: Response) => {
-    const service = await getAllPetsService()
+    const query = req.query.petName
+
+    const service = query ?
+        await getPetsByNameContainingService :
+        await getAllPetsService
+
     res.status(200).json(service)
 }
 

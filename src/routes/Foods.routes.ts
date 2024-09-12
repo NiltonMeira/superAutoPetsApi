@@ -1,5 +1,5 @@
 import  express  from 'express';
-import { creationFoodsController, deleteFoodController, getAllFoodsController, getFoodByIdController, getFoodsByNameController, patchFoodController } from '../controllers/FoodController';
+import { creationFoodsController, deleteFoodController, getAllFoodsController, getFoodByIdController,patchFoodController } from '../controllers/FoodController';
 import { validateOwnUser, validateToken } from '../middleware/ValidadeToken';
 
 const foodsRouter = express.Router()
