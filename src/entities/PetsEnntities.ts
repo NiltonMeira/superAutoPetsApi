@@ -10,7 +10,6 @@ const PetsSchema = new mongoose.Schema({
     heath: Number,
     turn: Number,
     const: Number,
-    recommendedFoods: [Food],
     img: String
     
 })

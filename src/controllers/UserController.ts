@@ -4,6 +4,8 @@ import { creationUserService, deleteUserService, getUserService, patchUserServic
 
 export const creationUserController = async (req: Request, res: Response) => {
     const service = await creationUserService(req.body)
+    console.log(service);
+    
     res.status(201).json(service)
 }
 
