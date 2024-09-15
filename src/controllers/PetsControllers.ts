@@ -13,10 +13,10 @@ export const getPetByIdController = async (req: Request, res: Response) => {
 
 export const getAllPetsController = async (req: Request, res: Response) => {
     const query = req.query.petName
-
+    
     const service = query ?
-        await getPetsByNameContainingService :
-        await getAllPetsService
+        await getPetsByNameContainingService(String(query)) :
+        await getAllPetsService()
 
     res.status(200).json(service)
 }

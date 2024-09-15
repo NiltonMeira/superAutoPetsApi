@@ -10,7 +10,6 @@ export type TPets = {
     heath: number,
     Turn: number,
     const: number,
-    RecommendedFoods: TFoods[],
     Img: string
 
 }

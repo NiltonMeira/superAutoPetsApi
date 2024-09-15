@@ -9,7 +9,6 @@ const PetsSchema = new mongoose.Schema({
     atack: Number,
     heath: Number,
     turn: Number,
-    const: Number,
     img: String
     
 })

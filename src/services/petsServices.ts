@@ -17,8 +17,8 @@ export const getPetByIdService = async (id: string) => {
 
 export const getAllPetsService = async () => {
     try{
-        const pet = await Pets.find({})
-        console.log(pet)
+        const pets = await Pets.find({})
+        return pets
     } catch(err){
         throw new AppError("Pet not found", 404)
     }
@@ -26,6 +26,8 @@ export const getAllPetsService = async () => {
 
 export const getPetsByNameContainingService = async (name: string) => {
     try {
+        console.log("errado");
+        
         const pet = await Pets.find(
             { "name": { "$regex": name, "$options": "i" } }
         );
