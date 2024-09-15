@@ -5,8 +5,8 @@ import { validateOwnUser, validateToken } from '../middleware/ValidadeToken';
 const foodsRouter = express.Router()
 
 foodsRouter.post("", validateToken, validateToken, creationFoodsController)
-foodsRouter.get("/:id", validateToken, validateOwnUser, getFoodByIdController)
-foodsRouter.get("",validateToken, validateOwnUser, getAllFoodsController)
+foodsRouter.get("/:id", getFoodByIdController)
+foodsRouter.get("", getAllFoodsController)
 foodsRouter.delete("", validateToken, validateOwnUser, deleteFoodController)
 foodsRouter.patch("", patchFoodController)
 

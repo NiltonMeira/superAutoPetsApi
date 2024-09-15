@@ -19,6 +19,7 @@ export const getAllFoodsService = async () => {
     try{
         const foods = await Food.find({})
         console.log(foods)
+        return foods
     } catch(err){
         throw new AppError("Foods not found", 404)
     }
